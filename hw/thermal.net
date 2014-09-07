@@ -1,0 +1,308 @@
+# EESchema Netlist Version 1.1 created  Mon 23 Apr 2012 06:45:59 PM EEST
+(
+ ( /4F9500B7 C1 C2 10u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4F9500F1 C2 C3 100n
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4F95017E C1 C4 22
+  ( 1 N-000027 )
+  ( 2 GND )
+ )
+ ( /4F950185 C1 C5 22
+  ( 1 N-000026 )
+  ( 2 GND )
+ )
+ ( /4F950302 D3 D1 3V6
+  ( 1 GND )
+  ( 2 N-000031 )
+ )
+ ( /4F950308 D3 D2 3V6
+  ( 1 GND )
+  ( 2 N-000039 )
+ )
+ ( /4F94FFAF DIP-20__300_ELL IC1 ATTINY2313-P
+  ( 1 N-000018 )
+  ( 2 N-000038 )
+  ( 3 N-000028 )
+  ( 4 N-000027 )
+  ( 5 N-000026 )
+  ( 6 N-000030 )
+  ( 7 N-000025 )
+  ( 8 N-000024 )
+  ( 9 N-000023 )
+  ( 10 GND )
+  ( 11 N-000010 )
+  ( 12 ? )
+  ( 13 ? )
+  ( 14 /TEMP4 )
+  ( 15 /TEMP3 )
+  ( 16 /TEMP2 )
+  ( 17 /TEMP1 )
+  ( 18 ? )
+  ( 19 N-000019 )
+  ( 20 VCC )
+ )
+ ( /4F950334 USB_B J1 USB_2
+  ( 1 ? )
+  ( 2 N-000031 )
+  ( 3 N-000039 )
+  ( 4 GND )
+ )
+ ( /4F950978 RJ12_E J2 RJ12
+  ( 1 ? )
+  ( 2 N-000009 )
+  ( 3 /+RA )
+  ( 4 /+DEC )
+  ( 5 /-DEC )
+  ( 6 /-RA )
+  ( 7 ? )
+  ( 8 ? )
+ )
+ ( /4F951EE5 DB9FC J3 DB9
+  ( 1 /TEMP1 )
+  ( 2 /TEMP2 )
+  ( 3 /TEMP3 )
+  ( 4 /TEMP4 )
+  ( 5 VCC )
+  ( 6 GND )
+  ( 7 N-000016 )
+  ( 8 N-000014 )
+  ( 9 +12V )
+ )
+ ( /4F9572BA pwrjack J4 JACK_2P
+  ( 1 GND )
+  ( 2 GND )
+  ( 3 +12V )
+ )
+ ( /4F9511FE TO220_VERT Q1 TIP120
+  ( 1 GND )
+  ( 2 N-000015 )
+  ( 3 N-000014 )
+ )
+ ( /4F951216 TO220_VERT Q2 TIP120
+  ( 1 GND )
+  ( 2 N-000034 )
+  ( 3 N-000016 )
+ )
+ ( /4F9502B7 R3 R1 33k
+  ( 1 VCC )
+  ( 2 N-000018 )
+ )
+ ( /4F95037B R3 R2 1k5
+  ( 1 VCC )
+  ( 2 N-000031 )
+ )
+ ( /4F95039C R3 R3 68
+  ( 1 N-000031 )
+  ( 2 N-000030 )
+ )
+ ( /4F9503A2 R3 R4 68
+  ( 1 N-000039 )
+  ( 2 N-000038 )
+ )
+ ( /4F950764 R3 R5 1k8
+  ( 1 N-000028 )
+  ( 2 N-000004 )
+ )
+ ( /4F95076A R3 R6 1k8
+  ( 1 N-000025 )
+  ( 2 N-000005 )
+ )
+ ( /4F950770 R3 R7 1k8
+  ( 1 N-000024 )
+  ( 2 N-000033 )
+ )
+ ( /4F950773 R3 R8 1k8
+  ( 1 N-000023 )
+  ( 2 N-000006 )
+ )
+ ( /4F950D02 R3 R9 4k7
+  ( 1 /TEMP4 )
+  ( 2 VCC )
+ )
+ ( /4F950D26 R3 R10 4k7
+  ( 1 /TEMP3 )
+  ( 2 VCC )
+ )
+ ( /4F950D47 R3 R11 4k7
+  ( 1 /TEMP2 )
+  ( 2 VCC )
+ )
+ ( /4F950D36 R3 R12 4k7
+  ( 1 /TEMP1 )
+  ( 2 VCC )
+ )
+ ( /4F951282 R3 R13 1k
+  ( 1 N-000010 )
+  ( 2 N-000015 )
+ )
+ ( /4F95129A R3 R14 1k
+  ( 1 N-000019 )
+  ( 2 N-000034 )
+ )
+ ( /4F950090 LM78XXV U1 LM7805
+  ( GND GND )
+  ( VI +12V )
+  ( VO VCC )
+ )
+ ( /4F9508B4 DIP-16__300 U2 LTV847
+  ( 1 N-000006 )
+  ( 2 GND )
+  ( 3 N-000033 )
+  ( 4 GND )
+  ( 5 N-000005 )
+  ( 6 GND )
+  ( 7 N-000004 )
+  ( 8 GND )
+  ( 9 N-000009 )
+  ( 10 /+RA )
+  ( 11 N-000009 )
+  ( 12 /+DEC )
+  ( 13 N-000009 )
+  ( 14 /-RA )
+  ( 15 N-000009 )
+  ( 16 /-DEC )
+ )
+ ( /4F95016E HC-49V X1 12MHz
+  ( 1 N-000027 )
+  ( 2 N-000026 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C2
+ CP*
+ SM*
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ D?
+ SO*
+ SM*
+$endlist
+$component D2
+ D?
+ SO*
+ SM*
+$endlist
+$component J3
+ DB9*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R14
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
