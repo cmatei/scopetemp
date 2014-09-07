@@ -1,0 +1,8 @@
+
+ScopeTemp
+---------
+
+An USB interface to temperature sensors mounted on the telescope, plus ST4 guider interface.
+
+Currently under revision: the FAN outputs should be PWM + MOSFET so they can drive
+either mirror cooling fans for my Newton or alternately the dew heaters for the two refractors.
