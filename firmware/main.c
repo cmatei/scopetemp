@@ -31,9 +31,9 @@
 #define T_PIN  PINB
 #define T_PORT PORTB
 
-/* FAN1 PB7, FAN2 PD6 */
-#define FAN1_BIT _BV(7)
-#define FAN2_BIT _BV(6)
+/* FAN1 OC1A(PB3), FAN2 OC1B(PB4) */
+#define FAN1_BIT _BV(3)
+#define FAN2_BIT _BV(4)
 
 enum {
 	IDLE,
@@ -51,12 +51,12 @@ struct ds1820 {
 	uint8_t data[6];
 };
 
-/* T1..T4 are on PB5..PB2 */
+/* T1..T4 are on PB */
 struct ds1820 sensors[4] = {
-	{ .pin = _BV(5), .state = IDLE },
-	{ .pin = _BV(4), .state = IDLE },
-	{ .pin = _BV(3), .state = IDLE },
-	{ .pin = _BV(2), .state = IDLE },
+	{ .pin = _BV(7), .state = IDLE },
+	{ .pin = _BV(6), .state = IDLE },
+	{ .pin = _BV(1), .state = IDLE },
+	{ .pin = _BV(0), .state = IDLE },
 };
 
 struct ds1820 *sensor;
@@ -168,9 +168,9 @@ static uint8_t ds1820_convert()
 
 /* ------------------------------------------------------------------------- */
 
-usbMsgLen_t usbFunctionSetup(uchar data[8])
+usbMsgLen_t usbFunctionSetup(uchar *data)
 {
-	usbRequest_t    *rq = (void *)data;
+	usbRequest_t *rq = (usbRequest_t *) data;
 	uint8_t val = rq->wValue.bytes[0];
 
 	switch (rq->bRequest) {
@@ -183,13 +183,8 @@ usbMsgLen_t usbFunctionSetup(uchar data[8])
 		return 0;
 
 	case THERMAL_RQ_FANS:
-		/* FAN1 */
-		PORTB &= ~FAN1_BIT;
-		PORTB |= (val & 0x01) ? FAN1_BIT : 0;
-
-		/* FAN2 */
-		PORTD &= ~FAN2_BIT;
-		PORTD |= (val & 0x02) ? FAN2_BIT : 0;
+		OCR1A = rq->wValue.word;
+		OCR1B = rq->wIndex.word;
 		break;
 	}
 
@@ -203,25 +198,33 @@ int main(void)
 {
 	uint8_t   i;
 
-	/* set DDRD for guiding and FAN2 */
-	DDRD  |= GUIDE_MASK | FAN2_BIT;
-	PORTD &= ~(GUIDE_MASK | FAN2_BIT);
+	/* enforce re-enumeration, do this while interrupts are disabled! */
+	usbDeviceDisconnect();
 
-	/* FAN1 is PB7 */
-	DDRB  |=  FAN1_BIT;
-	PORTB &= ~FAN1_BIT;
+	/* set DDRD for guiding */
+	DDRD  |= GUIDE_MASK;
+	PORTD &= ~GUIDE_MASK;
 
-	/* RESET status: all port bits are inputs without pull-up.
-	 * That's the way we need D+ and D-. Therefore we don't need any
-	 * additional hardware initialization.
-	 */
-	usbInit();
-	usbDeviceDisconnect();  /* enforce re-enumeration, do this while interrupts are disabled! */
 
-	for (i = 0; i < 150; i++)
-		_delay_ms(2);
+	/* clear OC1A/OC1B on compare match, fast pwm, TOP=ICR1, clk_io/8 (PWM = 5859 Hz) */
 
+	OCR1A = 0;
+	OCR1B = 0;
+	ICR1 = 0xFFFF;
+
+        TCCR1A = (1 << COM1A1) | (0 << COM1A0) |
+	         (1 << COM1B1) | (0 << COM1B0) |
+                 (1 << WGM11) | (0 << WGM10);
+        TCCR1B = (1 << WGM13) | (1 << WGM12) |
+                 (0 << CS12) | (1 << CS11) | (0 << CS10);
+
+	/* FAN1, FAN2 OC outputs */
+	DDRB |=  FAN1_BIT | FAN2_BIT;
+
+	/* start usb, enable ints */
+	_delay_ms(200);
 	usbDeviceConnect();
+	usbInit();
 
 	sei();
 
@@ -244,9 +247,8 @@ int main(void)
 			break;
 
 		case READING:
-			if (ds1820_read_scratchpad()) {
+			if (ds1820_read_scratchpad())
 				sensor->state = IDLE;
-			}
 			break;
 		}
 
