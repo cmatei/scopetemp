@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (22-Jun-2014 BZR 4027)-stable date = Sun 07 Sep 2014 05:40:38 PM EEST
+Cmp-Mod V01 Created by CvPcb (22-Jun-2014 BZR 4027)-stable date = Sun 07 Sep 2014 06:23:03 PM EEST
 
 BeginCmp
 TimeStamp = /4F9500B7;
@@ -81,14 +81,14 @@ BeginCmp
 TimeStamp = /540C71B2;
 Reference = Q1;
 ValeurCmp = IRL530N;
-IdModule  = TO220_VERT;
+IdModule  = TO220GDS;
 EndCmp
 
 BeginCmp
 TimeStamp = /540C71CB;
 Reference = Q2;
 ValeurCmp = IRL530N;
-IdModule  = TO220_VERT;
+IdModule  = TO220GDS;
 EndCmp
 
 BeginCmp
