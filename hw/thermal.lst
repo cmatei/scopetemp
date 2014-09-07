@@ -1,7 +1,5 @@
-eeschema (2012-jan-04)-stable  >> Creation date: Mon 23 Apr 2012 10:33:16 AM EEST
-
+eeschema (22-Jun-2014 BZR 4027)-stable  >> Creation date: Sun 07 Sep 2014 05:40:06 PM EEST
 #Cmp ( order = Reference )
-| C1         100n        
 | C2         10u         
 | C3         100n        
 | C4         22          
@@ -10,30 +8,65 @@ eeschema (2012-jan-04)-stable  >> Creation date: Mon 23 Apr 2012 10:33:16 AM EES
 | D2         3V6         
 | IC1        ATTINY2313-P
 | J1         USB_2       
-| R1         R           
+| J2         RJ12        
+| J3         DB9         
+| J4         JACK_2P     
+| Q1         IRL530N     
+| Q2         IRL530N     
+| R1         33k         
 | R2         1k5         
 | R3         68          
 | R4         68          
+| R5         1k8         
+| R6         1k8         
+| R7         1k8         
+| R8         1k8         
+| R9         4k7         
+| R10        4k7         
+| R11        4k7         
+| R12        4k7         
+| R13        1k          
+| R14        1k          
+| R15        100k        
+| R16        100k        
 | U1         LM7805      
+| U2         LTV847      
 | X1         12MHz       
 #End Cmp
 
 #Cmp ( order = Value )
-| 100n         C1        
 | 100n         C3        
 | 10u          C2        
-| 12MHz        X1        
-| 1k5          R2        
 | 22           C4        
 | 22           C5        
 | 3V6          D1        
 | 3V6          D2        
+| ATTINY2313-P IC1       
+| USB_2        J1        
+| RJ12         J2        
+| DB9          J3        
+| JACK_2P      J4        
+| IRL530N      Q1        
+| IRL530N      Q2        
 | 68           R3        
 | 68           R4        
-| ATTINY2313-P IC1       
+| 1k           R13       
+| 1k           R14       
+| 1k5          R2        
+| 1k8          R5        
+| 1k8          R6        
+| 1k8          R7        
+| 1k8          R8        
+| 4k7          R9        
+| 4k7          R10       
+| 4k7          R11       
+| 4k7          R12       
+| 33k          R1        
+| 100k         R15       
+| 100k         R16       
 | LM7805       U1        
-| R            R1        
-| USB_2        J1        
+| LTV847       U2        
+| 12MHz        X1        
 #End Cmp
 
 #End List
