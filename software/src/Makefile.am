@@ -19,10 +19,10 @@ guithermal_SOURCES	= guithermal.c \
 
 indithermal_SOURCES	= indithermal.c scopetemp.c
 indithermal_CPPFLAGS    = @LIBUSB_CFLAGS@ @INDI_CFLAGS@
-indithermal_LDADD       = @LIBUSB_LIBS@ @INDI_LIBS@ -lindidriver
+indithermal_LDADD       = @LIBUSB_LIBS@ @INDI_LIBS@ -lindidriver -lz -lm
 
 guithermal_CPPFLAGS	= @GTK_CFLAGS@
-guithermal_LDADD	= @GTK_LIBS@
+guithermal_LDADD	= @GTK_LIBS@ -lz -lm
 
 logthermal_SOURCES	= logthermal.c \
 			\
@@ -39,7 +39,7 @@ logthermal_SOURCES	= logthermal.c \
 			libindiclient/gtk/indisave.h libindiclient/gtk/indisave.c \
 			libindiclient/gtk/gtkled.h libindiclient/gtk/gtkled.c
 logthermal_CPPFLAGS	= @GTK_CFLAGS@
-logthermal_LDADD	= @GTK_LIBS@
+logthermal_LDADD	= @GTK_LIBS@ -lz -lm
 
 
 CLEANFILES = *~

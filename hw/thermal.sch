@@ -36,7 +36,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Telescope thermal control"
-Date "7 sep 2014"
+Date "24 sep 2014"
 Rev "1"
 Comp "Matei Conovici"
 Comment1 ""
@@ -79,8 +79,6 @@ Wire Wire Line
 	6250 4200 5850 4200
 Connection ~ 5800 1450
 Connection ~ 5600 2350
-Wire Wire Line
-	5600 2350 5600 3500
 Wire Wire Line
 	8650 1100 8000 1100
 Wire Wire Line
@@ -1010,11 +1008,13 @@ FAN1
 Text Label 5150 3200 0    60   ~ 0
 FAN2
 Wire Wire Line
-	5600 3500 4650 3500
-Wire Wire Line
 	5700 3400 4650 3400
 Wire Wire Line
-	5900 1000 5900 2800
+	5900 1000 5900 3000
 Wire Wire Line
-	5900 2800 4650 2800
+	5600 2350 5600 3300
+Wire Wire Line
+	5600 3300 4650 3300
+Wire Wire Line
+	5900 3000 4650 3000
 $EndSCHEMATC

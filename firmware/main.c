@@ -53,10 +53,10 @@ struct ds1820 {
 
 /* T1..T4 are on PB */
 struct ds1820 sensors[4] = {
-	{ .pin = _BV(7), .state = IDLE },
+	{ .pin = _BV(5), .state = IDLE },
 	{ .pin = _BV(6), .state = IDLE },
 	{ .pin = _BV(1), .state = IDLE },
-	{ .pin = _BV(0), .state = IDLE },
+	{ .pin = _BV(2), .state = IDLE },
 };
 
 struct ds1820 *sensor;
